@@ -50,7 +50,7 @@ app.use("/api/v1/jobs", authMiddleware, jobRouter);
 
 //custom middleware
 app.use(notFoundMiddleware);
-app.use(errorHandlerMiddleware);
+// app.use(errorHandlerMiddleware);
 
 //port
 const port = process.env.PORT || 3000;
