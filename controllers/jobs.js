@@ -37,8 +37,7 @@ const createJob = async (req, res) => {
     throw new BadRequestError("Company and position can't be empty");
   }
 
-  // eslint-disable-next-line no-undef
-  const job = await Job.create({ ...body, createdBy: userId });
+  const job = await Job.create({ ...req.body, createdBy: userId });
 
   return res.status(StatusCodes.CREATED).json({ data: job });
 };
