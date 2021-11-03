@@ -4,9 +4,6 @@ require("dotenv").config();
 //status codes
 require("express-async-errors");
 
-//chalk
-const chalk = require("chalk");
-
 // extra security packages
 const helmet = require("helmet");
 const cors = require("cors");
@@ -59,10 +56,7 @@ const port = process.env.PORT || 3000;
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
-    app.listen(port, () =>
-      // eslint-disable-next-line no-console
-      console.log(chalk.bgGreen(`Server is listening on port ${port}...`))
-    );
+    app.listen(port);
   } catch (error) {
     throw new Error(error.message);
   }
